@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Lieve Oma</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript">
+    </script>
+    <script src="jquery.slimScroll.min.js" type="text/javascript"></script>
+    <script src="jquery.slimScroll.min.js" type="text/javascript"></script>
+    <link href="style_Lieve_Oma.css" rel="stylesheet" type="text/css">
+    <link href="jquery.fullpage.min.css" rel="stylesheet" type="text/css">
+    <script src="jquery.fullpage.min.js" type="text/javascript"></script>
+    <script>
+        $('video').each(function(){
+            if ($(this).is(":in-viewport")) {
+                $(this)[0].play();
+            } else {
+                $(this)[0].pause();
+            }
+        })
+        
+        $(document).ready(function() {
+            $('#fullpage').fullpage({
+                lockAnchors: true,
+                //Scrolling
+                css3: true,
+                fitToSection: false,
+                fitToSectionDelay: 0,
+                touchSensitivity: 15,
+                normalScrollElementTouchThreshold: 5,
+                //scrollOverflow: true,
+
+                //Accessibility
+                keyboardScrolling: true,
+                animateAnchor: true,
+                recordHistory: true,
+
+                //Design
+                controlArrows: true,
+                verticalCentered: true,
+                resize : true,
+                responsiveWidth: 0,
+                responsiveHeight: 0,
+
+                //Custom selectors
+                sectionSelector: '.section',
+                slideSelector: '.slide',
+                
+                afterRender: function () {
+        //on page load, start the slideshow
+         slideTimeout = setInterval(function () {
+                $.fn.fullpage.moveSlideRight();
+            }, 1000);
+    },
+
+
+    onLeave: function (index, direction) {
+        //after leaving section 1 (home) and going anywhere else, whether scrolling down to next section or clicking a nav link, this SHOULD stop the slideshow and allow you to navigate the site...but it does not
+        if (index == '1') {
+            console.log('on leaving the slideshow/section1');
+            clearInterval(slideTimeout);
+        }
+    }
+            });
+        });
+            
+    </script>
+</head>
+<body>
+    <div id="fullpage">
+        <div class="section" style="background-color: #FFA391; color: #FFF">
+            <div class="inner" id="TitleScreen">
+                <span>
+                <span><img src="http://recto-ver.so/Lieve-Oma/title.gif"></span>
+                <h1 style="font-style: normal;"><span><br>an ode to sweet grandmothers</span></h1>
+                <iframe frameborder="0" src="https://itch.io/embed/58594?border_width=0&amp;bg_color=FFA391&amp;fg_color=ffffff&amp;link_color=F58B4E&amp;border_color=ffffff" width="550" height="165"></iframe>
+                </span>
+            </div>
+        </div><!-- about -->
+        <div class="section" style="background-color: #FFA391; color: #FFF">
+            <div class="description" style="float: left">
+                <div class="text">
+                    My grandmother is probably the most important person ever to me, as she provided me with the stability and care a child needs growing up.<br>We all have or have had people helping us become a responsible and caring person, and this short narrative game is an ode to these people.
+                </div>
+            </div>
+            <div class="visuals" style="float: right">
+                <div class="container">
+                    
+                    <div class="slide fp-auto-height"><img src="Images/lieve_oma/background%203.png"></div>
+                    
+                    <div class="slide fp-auto-height">
+                        <div class="TextCard">
+                            <span>Grandma forced you to come along a bit, but deep down you know the fresh air is good for you.<br>She tells you it's the season for penny buns, so look for those! Maybe if you find a lot, Grandma'll treat you to a nice reward?</span>
+                        </div>
+                    </div>
+                    
+                    <div class="slide fp-auto-height">
+                        <div class="TextCard">
+                            <span>But in the end you know the mushrooming's just a pretext Grandma came up with, to get you to talk about what's actually going on.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="slide fp-auto-height"><img src="Images/lieve_oma/background%201.png"></div>
+                    
+                    <div class="slide fp-auto-height">
+                        <div class="TextCard">
+                            <span>More images & videos coming soon!<br>💝✌️🍂</span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div><!-- more info -->
+        <div class="section" style="background-color: #FFA391; color: #FFF">
+            <div class="inner" id="TitleScreen">
+                <span>
+                    <div class="TextCard">
+                <span><iframe frameborder="0" src="https://itch.io/embed/58594?border_width=0&amp;bg_color=FFA391&amp;fg_color=ffffff&amp;link_color=F58B4E&amp;border_color=ffffff" width="550" height="165"></iframe><br>a game by <a href="http://twitter.com/florianvltmn" target="_blank">@FlorianVltmn</a><br>💝✌️🍂<br><a href="mailto:veltman.florian[at]gmail.com?Subject=About%20Lieve%20Oma" target="_top">contact</a></span>
+                </div>
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

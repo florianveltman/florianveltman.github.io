@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="js/modernizr.custom.42898.js"></script>
+    <script src="js/three.min.js">document.body.style.cursor = 'none';</script>
+	<script src="AudioSetup.js"></script>
+	<script src="assets.js"></script>
+	<script src="js/Projector.js"></script>
+	<script src="js/CanvasRenderer.js"></script>
+    <script src="js/WindowResize.js"></script>
+    <script src="js/Detector.js"></script>
+    <script src="js/ColladaLoader.js"></script>
+	<script src="Scenes/scene0.js"></script>
+	<script src="Scenes/scene1.js"></script>
+	<script src="Scenes/scene2.js"></script>
+	<script src="Scenes/scene3.js"></script>
+	<script src="Scenes/scene4.js"></script>
+	<script src="Scenes/scene4_intro.js"></script>
+    <title>
+    </title>
+</head>
+
+<body onload="Setup();">
+	<div id="Gradient"></div>
+	<progress id="timer" max="3000" value="3000"></progress>
+	
+	<div id="Cursor"><div id="ActiveCursor"></div></div>
+	
+	<div id="Circle"></div>
+	
+	<div id="Dial">
+		<div id="DialInner">
+			<div id="DialHalfCircle">
+				<div id="DialHalfCircleInner"></div>
+			</div>
+			<div id="DialArrow"></div>
+			<div id="DialTarget">
+			</div>
+		</div>
+	</div>
+	
+	<div id="Start">
+		<span>START</span>
+	</div>
+	
+	<div id="IntroText">
+		<span id="IntroTextSpan">Click<br>&<br>Drag</span>
+	</div>
+	
+	<script src="setup.js"></script>
+</body>
+</html>
