@@ -19,31 +19,31 @@
     
     .meter {
         position: absolute;
-	    top: 1%;
-	    left: 1%;
-	    right: 1%;
-	    bottom: 1%;
-	    padding: 2px;
-	    border: 2px solid #FF193D;
+        top: 1%;
+        left: 1%;
+        right: 1%;
+        bottom: 1%;
+        padding: 2px;
+        border: 2px solid #FF193D;
         z-index: -1;
     }
 
     .meter > span {
-	    display: block;
-	    height: 100%;
-	    background-color: #FF193D;
-	    position:relative;
-	    overflow: hidden;	    
+        display: block;
+        height: 100%;
+        background-color: #FF193D;
+        position:relative;
+        overflow: hidden;       
     }
     
     h1 {
-    	left: 5%;
-    	position: absolute;
-	    font: 100;
-	    font-family: sans-serif;
-	    font-size: 3em;
-	    color: #425159;
-	    text-shadow: -1px -1px 0 #FF193D, 1px -1px 0 #FF193D, -1px 1px 0 #FF193D, 1px 1px 0 #FF193D;
+        left: 5%;
+        position: absolute;
+        font: 100;
+        font-family: sans-serif;
+        font-size: 3em;
+        color: #425159;
+        text-shadow: -1px -1px 0 #FF193D, 1px -1px 0 #FF193D, -1px 1px 0 #FF193D, 1px 1px 0 #FF193D;
     }
     
     h2 {
@@ -54,13 +54,13 @@
         font: 100;
         font-family: sans-serif;
         font-style: oblique;
-	    font-size: 1.5em;
-	    color: #425159;
-	    text-shadow: -1px -1px 0 #FF193D, 1px -1px 0 #FF193D, -1px 1px 0 #FF193D, 1px 1px 0 #FF193D;
+        font-size: 1.5em;
+        color: #425159;
+        text-shadow: -1px -1px 0 #FF193D, 1px -1px 0 #FF193D, -1px 1px 0 #FF193D, 1px 1px 0 #FF193D;
     }
     
     body {
-	    background-color: #425159;
+        background-color: #425159;
     }
     
     </style>
@@ -69,7 +69,7 @@
 
 <body>
 <h1><span id="status"></span></h1>
-<!-- <h2><span id="likes">share this clock <br><iframe src=
+<h2><span id="likes">share this clock<br><br><iframe src=
     "//www.facebook.com/plugins/like.php?href=http%3A%2F%2F1day100percent.tumblr.com&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21"
     scrolling="no" frameborder="0" style=
     "border:none; overflow:hidden; width:450px; height:21px;"
@@ -79,7 +79,7 @@
     data-via="FlorianVltmn" data-hashtags="fuckimlate">Tweet</a>
     <script type="text/javascript">
     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-    </script></span></h2> -->
+    </script></span></h2>
 
 
 <div class="meter">
@@ -89,30 +89,30 @@
     <script type="text/javascript" language="javascript">
     function progressBarSim(al) {
     
-	    var currentTime = new Date()
-	    var hours = currentTime.getHours()
-	    var minutes = currentTime.getMinutes()
-	    if (minutes < 10){
-		    minutes = "0" + minutes
-	    }
-	    var seconds = currentTime.getSeconds()
-	    if (seconds < 10){
-		    seconds = "0" + seconds
-	    }
-	    var secondpercent = ((seconds/(60*60*24))*100)
-	    var minutepercent = ((minutes/(60*24))*100)
-	    var hourpercent = ((hours/24)*100)
-	    var daypercent = (hourpercent+minutepercent+secondpercent).toFixed(3);
-	    var bar = document.getElementById('progressBar').style.width= al+"%";
-	    var status = document.getElementById('status');
-	    al = daypercent
-	    status.innerHTML = al+"% <br> of the day <br>have passed.";
-	    bar.value = al;
-	    al++;
-	    var sim = setTimeout("progressBarSim("+al+")",1000);{
-		    document.title = al-1 + "%";
-	    }
-	    
+        var currentTime = new Date()
+        var hours = currentTime.getHours()
+        var minutes = currentTime.getMinutes()
+        if (minutes < 10){
+            minutes = "0" + minutes
+        }
+        var seconds = currentTime.getSeconds()
+        if (seconds < 10){
+            seconds = "0" + seconds
+        }
+        var secondpercent = ((seconds/(60*60*24))*100)
+        var minutepercent = ((minutes/(60*24))*100)
+        var hourpercent = ((hours/24)*100)
+        var daypercent = (hourpercent+minutepercent+secondpercent).toFixed(3);
+        var bar = document.getElementById('progressBar').style.width= al+"%";
+        var status = document.getElementById('status');
+        al = daypercent
+        status.innerHTML = al+"% <br> of the day <br>has passed<br><br>there is <br>"+(100-al).toFixed(3)+"%<br>of your day<br>remaining";
+        bar.value = al;
+        al++;
+        var sim = setTimeout("progressBarSim("+al+")",1000);{
+            document.title = al-1 + "%";
+        }
+        
     }
     
 
